@@ -16,6 +16,23 @@ async function gerarSenha(idTipoSenha){
 
 
 async function chamarSenha(tipoSenha){
-    //const senha = await fetch('chamar_senha.php?tipo='+idTipoSenha);
-    alert('Chamou a senha: '+ tipoSenha);
+
+    //alert('Chamou a senha: '+ tipoSenha);
+    const dados = await fetch('chamar_senha.php?tipo=' + tipoSenha);
+
+    const response = await dados.json();
+    //console.log(response);
+    if(!response['status']){
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+    }else{
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+
+        var listaDeSenha = document.getElementById("senhas");
+
+        var senha = document.getElementById("senha-" + response['id_gerada']);
+
+        //Remover da lista de chamada
+        listaDeSenha.removeChild(senha);
+    }
+    
 }

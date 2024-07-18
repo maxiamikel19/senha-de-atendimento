@@ -71,11 +71,11 @@ li:hover{
 }
 
 .senhas{
+    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    width: auto;
+    justify-content: space-between;
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 2em;
@@ -99,5 +99,15 @@ li:hover{
     padding: 1em;
     margin: 0.4em;
     border-radius: 0.5em;
-    background: #FF6347;
+    background: #DAA520;
+}
+
+.senha-urgente{
+    width: 19%;
+    height: auto;
+    border: solid 1px #999;
+    padding: 1em;
+    margin: 0.4em;
+    border-radius: 0.5em;
+    background: #FF0000;
 }

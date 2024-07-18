@@ -25,14 +25,12 @@
         ?>
         <div id="statusMessage"><span></span></div>
 
-        <p>Senha: <span id="senhaGerada"></span></p>
-
             <div class="senha-container">
                 <h4>Geradas</h4>
-                <div class="senhas">
+                <div class="senhas" id="senhas">
                     <?php        
 
-                        $query_senha_emitida = "SELECT emitida.id, emitida.data_hora, livre.nome, tipo.tipo
+                        $query_senha_emitida = "SELECT emitida.id, emitida.data_hora, livre.nome,livre.tipo_senha_id, tipo.tipo
                                                 FROM senha_gerada AS emitida
                                                 INNER JOIN senha AS livre ON emitida.senha_id = livre.id
                                                 INNER JOIN tipo_senha AS tipo ON tipo.id = livre.tipo_senha_id
@@ -46,27 +44,52 @@
                             //var_dump($row_senha_emitida);
 
                             extract($row_senha_emitida);
-                            switch($tipo){
-                                case 'Convencional':
-                                    echo "<div class='senha'>";
-                                    echo "DATA/HORA............: $data_hora<br>";
-                                    echo "ID............: $id<br>";
-                                    echo "SENHA.........: $nome <br>";
-                                    echo "TIPO..........: $tipo <br>";
-                                    echo "</div>";
-                                    break;
-                                case 'Preferencial':
-                                    echo "<div class='senha-preferencial'>";
-                                    echo "DATA/HORA............: $data_hora<br>";
-                                    echo "ID............: $id<br>";
-                                    echo "SENHA.........: $nome <br>";
-                                    echo "TIPO..........: $tipo <br>";
-                                    echo "</div>";
-                                    break;
-                                default:
-                                echo "<div class='senha'></div>";
 
+                            if($tipo_senha_id == 1){
+                                echo "<div class='senha' id='senha-$id'>";
+                                echo "DATA/HORA............: $data_hora<br>";
+                                echo "ID............: $id<br>";
+                                echo "SENHA.........: $nome <br>";
+                                echo "TIPO..........: $tipo <br>";
+                                echo "</div>";
+                            }else if($tipo_senha_id == 2){
+                                echo "<div class='senha-preferencial' id='senha-$id'>";
+                                echo "DATA/HORA............: $data_hora<br>";
+                                echo "ID............: $id<br>";
+                                echo "SENHA.........: $nome <br>";
+                                echo "TIPO..........: $tipo <br>";
+                                echo "</div>";
+                            }else{
+                                echo "<div class='senha-urgente' id='senha-$id'>";
+                                echo "DATA/HORA............: $data_hora<br>";
+                                echo "ID............: $id<br>";
+                                echo "SENHA.........: $nome <br>";
+                                echo "TIPO..........: $tipo <br>";
+                                echo "</div>";
                             }
+
+
+                            // switch($tipo){
+                            //     case 'Convencional':
+                            //         echo "<div class='senha' id='senha-$id'>";
+                            //         echo "DATA/HORA............: $data_hora<br>";
+                            //         echo "ID............: $id<br>";
+                            //         echo "SENHA.........: $nome <br>";
+                            //         echo "TIPO..........: $tipo <br>";
+                            //         echo "</div>";
+                            //         break;
+                            //     case 'Preferencial':
+                            //         echo "<div class='senha-preferencial'>";
+                            //         echo "DATA/HORA............: $data_hora<br>";
+                            //         echo "ID............: $id<br>";
+                            //         echo "SENHA.........: $nome <br>";
+                            //         echo "TIPO..........: $tipo <br>";
+                            //         echo "</div>";
+                            //         break;
+                            //     default:
+                            //     echo "<div class='senha'></div>";
+
+                            // }
                             
                         }
                         
