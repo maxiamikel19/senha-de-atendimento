@@ -1,7 +1,103 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body{
     background: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+}
+
+button{
+    padding: 0.6em;
+    margin: 1em 0.4em;
+    color: #222;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 #senhaGerada{
     color: green;
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #f1f1f1;
+    width: 100%;
+    background: #4682B4;
+}
+
+ul li{
+    margin: 0.5em;
+}
+
+li{
+    list-style: none;
+    background: #f2f2f2;
+    padding: 0.8em 1em;
+    border-radius: 0.5em;    
+    transition: .5s;
+}
+
+li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #222;
+}
+
+li:hover{
+    background: #ddd;
+}
+
+.container{
+    padding: 1em;
+}
+
+.senha-container{
+    width: auto;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background: #e1e1e1;
+    padding: 1em;
+}
+
+.senha-container h4{
+    width: 100%;
+}
+
+.senhas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+} 
+
+.senha{
+    width: 19%;
+    height: auto;
+    border: solid 1px #999;
+    padding: 1em;
+    margin: 0.4em;
+    border-radius: 0.5em;
+    background: #3CB371;
+}
+
+
+.senha-preferencial{
+    width: 19%;
+    height: auto;
+    border: solid 1px #999;
+    padding: 1em;
+    margin: 0.4em;
+    border-radius: 0.5em;
+    background: #FF6347;
 }

@@ -1,5 +1,5 @@
 async function gerarSenha(idTipoSenha){
-    const dados = await fetch('gerar_senha.php?tipo='+idTipoSenha)
+    const dados = await fetch('gerar_senha.php?tipo='+idTipoSenha);
     
     const dadosJson = await dados.json();
     
@@ -12,4 +12,10 @@ async function gerarSenha(idTipoSenha){
         document.getElementById('senhaGerada').innerHTML= dadosJson['nome'];
         document.getElementById('statusMessage').innerHTML= "";
     }
+}
+
+
+async function chamarSenha(tipoSenha){
+    //const senha = await fetch('chamar_senha.php?tipo='+idTipoSenha);
+    alert('Chamou a senha: '+ tipoSenha);
 }
