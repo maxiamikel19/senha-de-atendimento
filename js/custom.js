@@ -36,3 +36,23 @@ async function chamarSenha(tipoSenha){
     }
     
 }
+
+async function chamarUrgente(idSenha){
+    //console.log("Chamou com urgencia a: "+ idSenha);
+    const senha = await fetch('chamar_senha_urgente.php?senha=' + idSenha);
+
+    const response = await senha.json();
+
+    if(!response['status']){
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+    }else{
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+
+        var listaDeSenha = document.getElementById("senhas");
+
+        var senha_atendida = document.getElementById("senha-" + response['id_gerada']);
+
+        //Remover da lista de chamada
+        listaDeSenha.removeChild(senha_atendida);
+    }
+}

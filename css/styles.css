@@ -111,3 +111,22 @@ li:hover{
     border-radius: 0.5em;
     background: #FF0000;
 }
+
+.btn-senha{
+    width: 100%;
+    background: transparent;
+    margin: 1em 0 0 0;
+    padding: 0px;
+    text-align: center;
+}
+
+.btn-senha button{
+    border-radius: 0.5em;
+    border: none;
+    padding: 0.8em;
+    font-size: 0.9em;
+    background: #8B0000;
+    color: #FFF;
+    font-weight: 700;
+    cursor: pointer;
+}
