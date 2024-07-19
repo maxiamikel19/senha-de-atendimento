@@ -19,9 +19,9 @@
     <div class="container">
         <h3>Atendimento</h3>
         <?php 
-            echo " <button type='button' onclick='chamarSenha(1)'>Normal</button>";
+            echo " <button type='button' onclick='chamarSenha(1)'>Convencional</button>";
 
-            echo " <button type='button' onclick='chamarSenha(2)'>Prioritário</button>";
+            echo " <button type='button' onclick='chamarSenha(2)'>Preferencial</button>";
         ?>
         <div id="statusMessage"><span></span></div>
 

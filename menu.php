@@ -13,5 +13,6 @@
     <ul>
         <li><a href="index.php">Gerar Senha</a></li>
         <li><a href="atendimento.php">Atendimento</a></li>
+        <li><a href="liberar_sehna.php">Liberar Senha</a></li>
     </ul>
 </div>

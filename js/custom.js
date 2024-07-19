@@ -56,3 +56,20 @@ async function chamarUrgente(idSenha){
         listaDeSenha.removeChild(senha_atendida);
     }
 }
+
+
+async function liberarSenha(idTipo){
+    //console.log("Loberando os tipos: " + idTipo);
+
+    const dados = await fetch('liberar_senha_tipo.php?tipo=' + idTipo);
+
+    const response = await dados.json();
+
+    //console.log(response);
+
+    if(response['status']){
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+    }else{
+        document.getElementById("statusMessage").innerHTML= response["msg"];
+    }
+}

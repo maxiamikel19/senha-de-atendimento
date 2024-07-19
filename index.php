@@ -1,3 +1,7 @@
+<?php 
+    require_once('./conexao.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +20,23 @@
     
         <div id="statusMessage"><span></span></div>
 
-        <p>Senha: <span id="senhaGerada"></span></p>
+        
 
-        <button type="button" onclick="gerarSenha(1)">Atendimento Normal</button>
-        <button type="button" onclick="gerarSenha(2)">Atendimento Prioritário</button>
+        <?php 
+            $req_nemu = "SELECT tp.id, tp.tipo
+            FROM tipo_senha as tp";
+            $res_nemu = $conn->prepare($req_nemu);
+            $res_nemu->execute();
+            
+            while($row_nemu = $res_nemu->fetch(PDO::FETCH_ASSOC)){
+
+                extract($row_nemu);
+                
+                echo "<button type='button' onclick='gerarSenha($id)'>$tipo</button>";
+            }
+
+        ?>
+        <p>Senha: <span id="senhaGerada"></span></p>
     </div>
    
 

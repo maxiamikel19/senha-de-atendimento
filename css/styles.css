@@ -22,6 +22,8 @@ button{
     color: green;
 }
 
+
+
 .menu ul{
     display: flex;
     align-items: center;
@@ -90,8 +92,7 @@ li:hover{
     border-radius: 0.5em;
     background: #3CB371;
 }
-
-
+ 
 .senha-preferencial{
     width: 19%;
     height: auto;
