@@ -9,6 +9,7 @@
 <body>
     
     <?php
+        require_once('./conexao.php');
         include('menu.php');
     ?>
     <div class="container">
@@ -17,9 +18,17 @@
         <div id="statusMessage"><span></span></div>
 
         <p><span id="senhaGerada"></span></p>
+        <?php 
+            $req_senha = "SELECT tp.id,tp.tipo FROM tipo_senha AS tp";
+            $res_senha = $conn->prepare($req_senha);
+            $res_senha->execute();
 
-        <button type="button" onclick="liberarSenha(1)">Convencional</button>
-        <button type="button" onclick="liberarSenha(2)">Preferencial</button>
+            while($row_senha = $res_senha->fetch(PDO::FETCH_ASSOC)){
+                extract($row_senha);
+                echo "<button type='button' onclick='liberarSenha($id)'>$tipo</button>";
+            }
+        ?>
+
     </div>
    
 

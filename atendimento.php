@@ -20,8 +20,8 @@
         <h3>Atendimento</h3>
         <?php 
             echo " <button type='button' onclick='chamarSenha(1)'>Convencional</button>";
-
             echo " <button type='button' onclick='chamarSenha(2)'>Preferencial</button>";
+            echo " <button type='button' onclick='chamarSenha(3)'>Urgente</button>";
         ?>
         <div id="statusMessage"><span></span></div>
 
