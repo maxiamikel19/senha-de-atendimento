@@ -54,3 +54,9 @@ LIBERAR SENHA: http://localhost/atendimento/liberar_sehna.php
 ![image](https://github.com/user-attachments/assets/f53af165-c1d3-4fc0-be93-5cb00c617c7b)
 
 
+====================================
+DB: http://localhost/phpmyadmin/index.php?route=/database/export&db=atendimento
+
+![image](https://github.com/user-attachments/assets/92e98a48-8903-4619-9104-e1def0e34e6b)
+
+
